@@ -30,7 +30,7 @@ def compute(bands, user_data):
     from sklearn.ensemble import RandomForestRegressor
     model = RandomForestRegressor(random_state=0,n_estimators=200).fit(mag_train, np.ravel(sfr_train))
     print(model.score(mag_train, sfr_train))
-    print(model.score(mag_test,sfr_test))
+    print(model.score(mag_test, sfr_test))
 
     user_sfrs = model.predict(user_data)
     return user_sfrs

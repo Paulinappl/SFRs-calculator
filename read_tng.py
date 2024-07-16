@@ -34,3 +34,5 @@ if __name__ == '__main__':
     print(model.score(mag_train, sfr_train))
     print(model.score(mag_test,sfr_test))
     print(type(np.ravel(sfr_train)))
+
+    OOOPS THIS IS A MISTAKE

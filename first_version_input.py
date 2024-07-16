@@ -14,13 +14,17 @@
 # form the model can use. If you want to work on any of that, let us know! Tomorrow 
 # we can actually work on the ML model itself and on predicting the SFRs from the user photometry
 
-import pandas as pd
-import numpy as np
+
+# First, we need to import the main modules to our script. 
+
 import csv
+import numpy as np
+import pandas as pd
 import matplotli.pyplot as plt
 
 
-data = pd.read_csv("your_file.csv")
+data = pd.read_csv("A2670Finalcat.csv")
+
 
 
 

@@ -33,4 +33,3 @@ if __name__ == '__main__':
     model = RandomForestRegressor(random_state=0,n_estimators=200).fit(mag_train, np.ravel(sfr_train))
     print(model.score(mag_train, sfr_train))
     print(model.score(mag_test,sfr_test))
-    print(type(np.ravel(sfr_train)))

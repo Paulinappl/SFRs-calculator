@@ -1,11 +1,12 @@
-# TOMAR UGRZ
-# TASAS SFR EN EL OPTICO Y UV 
-# VER CON QUE PARAMETROS DE ILUSTRIS SALE BIEN
-# QUEDARNOS CON 11 HALOS (CUMULOS DE GALAXIAS) 
-# SUB-HALOS = GALAXIAS
+# Take UGRZ
+# SFR OPTIC and UV 
+# See what parameters of ilustris work
+# Use 11 halos (Galaxy clusters) 
+# SUB-HALOS = GALAXIES
 
-# USAR EL COLOR G - R Y MASA, SI HAY MAS PUES MAS
-# MATRICES DE CORRELACIÓN
+# USE COLOR G - R AND MASS
+#  CORRELATION MATRIXES
+# 
 
 
 # Luis and Paulina are going to work today on writing the code to take user input,

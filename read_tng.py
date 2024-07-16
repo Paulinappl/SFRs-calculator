@@ -25,7 +25,7 @@ def split_dataset(mags, sfrs):
 
 
 if __name__ == '__main__':
-    mags, sfrs = load_tng_data('/path/toSubhaloMag.npy','/path/to/subhaloSFR.npy')
+    mags, sfrs = load_tng_data('/path/to/SubhaloMag.npy','/path/to/subhaloSFR.npy')
     mag_train, mag_test, sfr_train, sfr_test = split_dataset(mags, sfrs)
     print(type(mag_test), len(sfr_train), len(sfr_test), mag_test.shape, mag_train.shape)
 
@@ -34,5 +34,3 @@ if __name__ == '__main__':
     print(model.score(mag_train, sfr_train))
     print(model.score(mag_test,sfr_test))
     print(type(np.ravel(sfr_train)))
-
-    OOOPS THIS IS A MISTAKE

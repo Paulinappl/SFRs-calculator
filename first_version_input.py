@@ -22,8 +22,10 @@ import numpy as np
 import pandas as pd
 import matplotli.pyplot as plt
 
-
+#This command reads the dataframe
 data = pd.read_csv("A2670Finalcat.csv")
+
+
 
 
 

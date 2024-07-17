@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+SFRs_calculator.egg-info/PKG-INFO
+SFRs_calculator.egg-info/SOURCES.txt
+SFRs_calculator.egg-info/dependency_links.txt
+SFRs_calculator.egg-info/requires.txt
+SFRs_calculator.egg-info/top_level.txt

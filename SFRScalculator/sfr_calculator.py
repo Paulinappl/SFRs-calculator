@@ -4,6 +4,19 @@ from sklearn.model_selection import train_test_split
 
 ## only load the bands that correspond to the users bands
 def load_tng_data(mag_file, sfr_file, bands_to_use=['u', 'b', 'v', 'k', 'g', 'r', 'i', 'z']): 
+    """Load TNG data
+    
+    Load the TNG data and return the magnitudes and SFRs.
+    
+    Args:
+        mag_file(string): the file containing the magnitudes
+        sfr_file(string): the file containing the SFRs
+        bands_to_use(list): the bands to use in the calculation, default will use all bands
+        
+    Returns:
+        mags_to_use(pandas.DataFrame): the magnitudes to use
+        logSFR(pandas.DataFrame): the log(SFRs) to use, clipped to -5,100
+    """
     try:
         mags = pd.DataFrame(np.load(mag_file))
     except:

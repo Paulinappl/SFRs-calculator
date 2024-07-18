@@ -4,7 +4,7 @@ sys.path.append("../SFRScalculator/")
 import numpy as np
 import pandas as pd
 #import sfr_calculator
-#from SFRs-calculator import SFRscalculator.sfr_calculator
+#frpom SFRs-calculator import SFRscalculator.sfr_calculator
 import sfr_calculator
 import matplotlib.pyplot as plt
 
@@ -24,5 +24,6 @@ test_sfrs = sfr_calculator.compute(bands=['u','g','r','z'], user_data=mag_data)
 
 print(test_sfrs-data['log_SFR'])
 
-#assert np.all(test_sfrs != 0) # maybe better negative or negative infinite
+print("pau")
+#assert np.all(test_sfrs > 0) # maybe better negative or negative infinite
 assert np.all(np.isfinite(test_sfrs))  # makes sure that the sfrs are kinda reasonable

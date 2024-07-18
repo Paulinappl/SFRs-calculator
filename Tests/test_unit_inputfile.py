@@ -23,5 +23,5 @@ def test_inputfile():
     assert np.isin(mag_data.columns,bands).all()
     assert np.isnan(mag_data.values).all()==False
 
-test_inputfile()
+
     

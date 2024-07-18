@@ -36,6 +36,17 @@ def split_dataset(mags, sfrs):
 
 # [U B V K g r i z] are the TNG bands
 def compute(bands, user_data):
+    '''SFR computation
+
+    Calculate the star-formation rates (SFRs) of the user-defined galaxies using the model trained on TNG data.
+
+    Args:
+        bands (list): list of strings where each string refers to a different photometric band. These are the photometric bands input by the user.
+        user_data (array): absolute magnitudes in each band specified in "bands."
+
+    Returns:
+        array: SFRs of the galaxies
+    '''
     mags, sfrs = load_tng_data('SubhaloMag.npy','subhaloSFR.npy', bands_to_use=bands)
     mag_train, mag_test, sfr_train, sfr_test = split_dataset(mags, sfrs)
     # print(type(mag_test), len(sfr_train), len(sfr_test), mag_test.shape, mag_train.shape)

@@ -30,7 +30,7 @@ def load_tng_data(mag_file, sfr_file, bands_to_use=['u', 'b', 'v', 'k', 'g', 'r'
     return mags_to_use, np.clip(np.log10(sfrs),-5,100)
 
 def split_dataset(mags, sfrs):
-     """Split data set
+    """Split data set
     
     Split the TNG data and return the magnitudes and SFRs of the tests and training sets.
     

@@ -46,7 +46,12 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">SFR Calculation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SFR Calculation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sfr_calculator.compute"><code class="docutils literal notranslate"><span class="pre">compute()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sfr_calculator.load_tng_data"><code class="docutils literal notranslate"><span class="pre">load_tng_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sfr_calculator.split_dataset"><code class="docutils literal notranslate"><span class="pre">split_dataset()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -76,6 +81,74 @@
   <section id="sfr-calculation">
 <span id="sfr-calculator"></span><h1>SFR Calculation<a class="headerlink" href="#sfr-calculation" title="Permalink to this heading"></a></h1>
 <p>Function to compute SFRs for user-defined galaxies.</p>
+<span class="target" id="module-sfr_calculator"></span><dl class="py function">
+<dt class="sig sig-object py" id="sfr_calculator.compute">
+<span class="sig-prename descclassname"><span class="pre">sfr_calculator.</span></span><span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bands</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sfr_calculator.compute" title="Permalink to this definition"></a></dt>
+<dd><p>SFR computation</p>
+<p>Calculate the star-formation rates (SFRs) of the user-defined galaxies using the model trained on TNG data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bands</strong> (<em>list</em>) – list of strings where each string refers to a different photometric band. These are the photometric bands input by the user.</p></li>
+<li><p><strong>user_data</strong> (<em>array</em>) – absolute magnitudes in each band specified in “bands.”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>SFRs of the galaxies</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sfr_calculator.load_tng_data">
+<span class="sig-prename descclassname"><span class="pre">sfr_calculator.</span></span><span class="sig-name descname"><span class="pre">load_tng_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mag_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sfr_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bands_to_use</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['u',</span> <span class="pre">'b',</span> <span class="pre">'v',</span> <span class="pre">'k',</span> <span class="pre">'g',</span> <span class="pre">'r',</span> <span class="pre">'i',</span> <span class="pre">'z']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sfr_calculator.load_tng_data" title="Permalink to this definition"></a></dt>
+<dd><p>Load TNG data</p>
+<p>Load the TNG data and return the magnitudes and SFRs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mag_file</strong> (<em>string</em>) – the file containing the magnitudes</p></li>
+<li><p><strong>sfr_file</strong> (<em>string</em>) – the file containing the SFRs</p></li>
+<li><p><strong>bands_to_use</strong> (<em>list</em>) – the bands to use in the calculation, default will use all bands</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the magnitudes to use
+logSFR(pandas.DataFrame): the log(SFRs) to use, clipped to -5,100</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>mags_to_use(pandas.DataFrame)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sfr_calculator.split_dataset">
+<span class="sig-prename descclassname"><span class="pre">sfr_calculator.</span></span><span class="sig-name descname"><span class="pre">split_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sfrs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sfr_calculator.split_dataset" title="Permalink to this definition"></a></dt>
+<dd><p>Split data set</p>
+<p>Split the TNG data and return the magnitudes and SFRs of the tests and training sets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mags</strong> – the file containing the TNG magnitudes we will use</p></li>
+<li><p><strong>sfrs</strong> – the file containing the TNG SFRs we will use</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>TNG magnitudes training set
+mag_test:TNG magnitudes test set
+sfr_train: TNG sfrs training set
+sfr_test: TNG sfrs test set</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>mag_train</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 

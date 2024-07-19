@@ -1,9 +1,9 @@
 import numpy as np
 import pandas as pd
-from SFRScalculator import sfr_calculator as sfr_calculator
+from SFRcalculator import sfr_calculator as sfr_calculator
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("SFRScalculator/A2670Finalcat.csv")
+data = pd.read_csv("SFRcalculator/A2670Finalcat.csv")
 
 
 

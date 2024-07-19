@@ -49,7 +49,7 @@ def split_dataset(mags, sfrs):
     mag_train, mag_test, sfr_train, sfr_test = train_test_split(mags, sfrs, test_size=0.15, 
                                                                 random_state=12)
     
-    assert len(mag_train) < len(mags) # checar que sea menor el training set que el original
+    assert len(mag_train) < len(mags)
 
     return mag_train, mag_test, sfr_train, sfr_test
  

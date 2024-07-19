@@ -48,8 +48,11 @@ def split_dataset(mags, sfrs):
     """
     mag_train, mag_test, sfr_train, sfr_test = train_test_split(mags, sfrs, test_size=0.15, 
                                                                 random_state=12)
-    return mag_train, mag_test, sfr_train, sfr_test
+    
+    assert len(mag_train) < len(mags)
 
+    return mag_train, mag_test, sfr_train, sfr_test
+ 
 # [U B V K g r i z] are the TNG bands
 def compute(bands, user_data):
     '''SFR computation

@@ -12,7 +12,6 @@ Welcome to SFRcalculator's documentation!
    
    sfr_calculator.rst
 
-
 Indices and tables
 ==================
 

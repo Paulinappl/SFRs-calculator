@@ -5,8 +5,6 @@ import matplotlib.pyplot as plt
 
 data = pd.read_csv("SFRcalculator/A2670Finalcat.csv")
 
-
-
 #data = pd.read_csv()
 # print(data.head(4))
 mag_data = data[['mag_u', 'mag_g','mag_r','mag_z']]

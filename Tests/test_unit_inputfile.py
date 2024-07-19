@@ -1,5 +1,5 @@
 import sys
-sys.path.append("../SFRScalculator/")
+sys.path.append("../SFRcalculator/")
 
 import numpy as np
 import pandas as pd
@@ -8,7 +8,7 @@ import pandas as pd
 from SFRcalculator import sfr_calculator
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("SFRScalculator/A2670Finalcat.csv")
+data = pd.read_csv("SFRcalculator/A2670Finalcat.csv")
 
 
 def test_inputfile():

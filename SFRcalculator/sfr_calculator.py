@@ -62,7 +62,7 @@ def compute(bands, user_data):
     Returns:
         array: SFRs of the galaxies
     '''
-    mags, sfrs = load_tng_data('SubhaloMag.npy','subhaloSFR.npy', bands_to_use=bands)
+    mags, sfrs = load_tng_data('SFRcalculator/SubhaloMag.npy','SFRcalculator/subhaloSFR.npy', bands_to_use=bands)
     mag_train, mag_test, sfr_train, sfr_test = split_dataset(mags, sfrs)
     # print(type(mag_test), len(sfr_train), len(sfr_test), mag_test.shape, mag_train.shape)
 

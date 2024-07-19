@@ -1,14 +1,9 @@
-import sys
-sys.path.append("../SFRScalculator/")
-
 import numpy as np
 import pandas as pd
-#import sfr_calculator
-#frpom SFRs-calculator import SFRscalculator.sfr_calculator
-import sfr_calculator
+from SFRScalculator import sfr_calculator as sfr_calculator
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("../SFRScalculator/A2670Finalcat.csv")
+data = pd.read_csv("SFRScalculator/A2670Finalcat.csv")
 
 
 

@@ -36,7 +36,7 @@ def split_dataset(mags, sfrs):
 
 # [U B V K g r i z] are the TNG bands
 def compute(bands, user_data):
-    mags, sfrs = load_tng_data('SubhaloMag.npy','subhaloSFR.npy', bands_to_use=bands)
+    mags, sfrs = load_tng_data('SFRScalculator/SubhaloMag.npy','SFRScalculator/subhaloSFR.npy', bands_to_use=bands)
     mag_train, mag_test, sfr_train, sfr_test = split_dataset(mags, sfrs)
     # print(type(mag_test), len(sfr_train), len(sfr_test), mag_test.shape, mag_train.shape)
 
